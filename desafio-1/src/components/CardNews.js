@@ -84,11 +84,23 @@ class CardNews extends HTMLElement {
       width: 320px;
       height: auto;
     }
-
+      
     `;
 
     return style;
   }
 }
+customElements.define("card-news", CardNews);
+
+// Selecione todos os elementos <card-news> dentro da div com a classe "app-root"
+const cardNewsElements = document.querySelectorAll('.app-root card-news');
+
+// Itere sobre os elementos e adicione margens a cada um
+cardNewsElements.forEach((cardNewsElement, index) => {
+  // Adicione margens à direita de todos, exceto o último elemento
+  if (index < cardNewsElements.length - 1) {
+    cardNewsElement.style.marginRight = '20px';
+  }
+});
 
 customElements.define("card-news", CardNews);
