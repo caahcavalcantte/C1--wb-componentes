@@ -1,4 +1,4 @@
-class Cardnews extends HTMLElement {
+class CardNews extends HTMLElement {
   constructor() {
     super();
 
@@ -8,7 +8,7 @@ class Cardnews extends HTMLElement {
   }
 
   build() {
-    const componentRoot = document.creatElement("div");
+    const componentRoot = document.createElement("div");
     componentRoot.setAttribute("class", "card");
 
     const cardLeft = document.createElement("div");
@@ -22,7 +22,7 @@ class Cardnews extends HTMLElement {
     linkTitle.href = this.getAttribute("link-url");
 
     const newsContent = document.createElement("p");
-    newsContent.textContent = this.getAttribute("contet");
+    newsContent.textContent = this.getAttribute("content");
 
     cardLeft.appendChild(autor);
     cardLeft.appendChild(linkTitle);
@@ -32,9 +32,9 @@ class Cardnews extends HTMLElement {
     cardRight.setAttribute("class", "card-right");
 
     const newsImage = document.createElement("img");
-    newsImage.src = this.getAttribute(photo) || "assets/img/default-profile-picture1.jpg.";
+    newsImage.src = this.getAttribute("photo") || "desafio-1/assets/img/default-profile-picture1.jpg";
     newsImage.alt = "Foto da Noticia";
-    cardRight.appendChild("newsImage");
+    cardRight.appendChild(newsImage);
 
     componentRoot.appendChild(cardLeft);
     componentRoot.appendChild(cardRight);
@@ -80,15 +80,15 @@ class Cardnews extends HTMLElement {
       color: #707070;
     }
     
-    .card_right img{
+    .card_right >img{
       width: 320px;
       height: auto;
     }
 
     `;
-    
+
     return style;
   }
 }
 
-customElements.define("card-news", Cardnews);
+customElements.define("card-news", CardNews);
