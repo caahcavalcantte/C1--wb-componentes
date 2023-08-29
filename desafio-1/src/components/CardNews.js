@@ -84,7 +84,7 @@ class CardNews extends HTMLElement {
       width: 320px;
       height: auto;
     }
-      
+    
     `;
 
     return style;
